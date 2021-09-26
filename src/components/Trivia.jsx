@@ -5,22 +5,27 @@ import play from "../assets/paly.mp3";
 import correct from "../assets/correct.mp3";
 import wait from "../assets/wait.mp3";
 import wrong from "../assets/wrong.mp3";
-const Trivia = ({data,setStop,setTimeFreeze,questionNumber,setQuestionNumber})=> {
+const Trivia = ({data,setStop,username,setTimeFreeze,questionNumber,setQuestionNumber})=> {
     
     const [question, setQuestion] = useState(null);
     const [selectedAnswer, setSelectedAnswer] = useState(null);
-    const [className, setClassName] = useState("answers");
+    const [className, setClassName] = useState("answer");
     const [letsPlay] = useSound(play);
     const [correctAnswer] = useSound(correct);
     const [waits] = useSound(wait);
     const [wrongAnswer] = useSound(wrong);
 
     useEffect(()=>{
-        letsPlay();
+       letsPlay();
     },[letsPlay]);
 
+
     useEffect(()=>{
+        if(questionNumber===16) return setStop(true);
+        
         setQuestion(data[questionNumber-1]);
+        
+        
     },[data,questionNumber])
 
 
@@ -32,21 +37,24 @@ const Trivia = ({data,setStop,setTimeFreeze,questionNumber,setQuestionNumber})=>
     }
 
     const handleclick = (a)=>{
+        
         setTimeFreeze(true);
         let b = question?.correct_answer;
         setSelectedAnswer(a);
         setClassName("answer active");
         delay(3000,()=>
-            setClassName(a==b ? "answer correct" : "answer wrong")
+            setClassName(a===b ? "answer correct" : "answer wrong")
         );
         delay(5000, ()=>{
                 if(a===b){
                     correctAnswer();
                     
-                    delay(3000,()=>{
-                        setQuestionNumber(prev => prev+1);
+                    delay(1000,()=>{
                         setSelectedAnswer(null);
+                        setClassName("answer");
+                        setQuestionNumber(prev => prev+1);                        
                     })
+                    
                     
                 }
                 else{
@@ -56,7 +64,9 @@ const Trivia = ({data,setStop,setTimeFreeze,questionNumber,setQuestionNumber})=>
                     });
                 }
             }
+            
         )
+        
         
     }
     return(

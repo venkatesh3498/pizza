@@ -1,17 +1,23 @@
 
+import ProgressBar from 'react-customizable-progressbar'
 import { useState,useEffect, useMemo } from 'react';
 import Trivia from './components/Trivia';
 import Timer from './components/Timer';
 import Start from './components/Start';
 
 
+
 function App({datas}) {
+  const [timeAmount, setTimeAmount] = useState(45)
+  const [amount, setAmount] = useState(1000)
   const [timeFreeze,setTimeFreeze] = useState(false);
   const [username, setUsername] = useState(null);
   const [questionNumber,setQuestionNumber] = useState(1);
   const [stop,setStop] = useState(false);
   const [earned, setEarned] = useState("₹ 0");
-
+  const money = ["₹ 1000","₹ 2000"," ₹ 3000","₹ 5000","₹ 10000"," ₹ 20000","₹ 40000",
+    "₹ 80000","₹ 160000","₹ 320000","₹ 640000","₹ 1280000","₹ 2500000","₹ 5000000","₹ 10000000"
+  ]
   const moneyPyramid = useMemo(() => 
     [
       {id:1,amount:"₹ 1000"},
@@ -37,21 +43,34 @@ function App({datas}) {
     questionNumber > 1 && setEarned(moneyPyramid.find((m)=>m.id===questionNumber-1).amount)
 
   }, [moneyPyramid,questionNumber])
- 
   
-  
+  useEffect(() => {
+    let num = questionNumber;
+    setAmount(money[num-1]);
+    
+  }, [questionNumber])
+  const timee = <Timer setTimeAmount = {setTimeAmount} setTimeFreeze={setTimeFreeze} timeFreez={timeFreeze} setStop={setStop} questionNumber={questionNumber} />;
   return (
       <div className="app" >
+        
         {username ? (
           <>
             <div className="main">
-            {stop ? (<div className="endText" ><h1>Congratulation {username}</h1> <h3>You Earned {earned}</h3></div>):(
+            {stop ? (<><div className="author"><h3>Made By<a target="_blank" href="https://venkateswararao.netlify.app" className="authorName">Venkatesh</a></h3></div><div className="endText" ><h1>Congratulation {username}</h1> <h3>You Earned {earned}</h3></div></>):(
               <>
               <div className="top">
-                <div className="timer"><Timer setTimeFreeze={setTimeFreeze} timeFreeze={timeFreeze} setStop={setStop} questionNumber={questionNumber} /></div>
+                <div className="author"><h3>Made By<a target="_blank" href="https://venkateswararao.netlify.app" className="authorName">Venkatesh</a></h3></div>
+                <div className="mobPyramid">
+                  <span>{amount}</span>
+
+                </div>
+                <div className="timer" >
+                  {timee}  
+                </div>
               </div>
               <div className="bottom">
                 <Trivia data = {data} 
+                  username = {username}
                   setTimeFreeze = {setTimeFreeze}
                   setStop = {setStop} 
                   questionNumber = {questionNumber}

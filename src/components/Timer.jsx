@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 
 
-export default function Timer({setStop,questionNumber,setTimeFreeze,timeFreeze}) {
-    const [timer, setTimer] = useState(30);
+export default function Timer({setStop,setTimeAmount,questionNumber,setTimeFreeze,timeFreez}) {
+    const [timer, setTimer] = useState(45);
     useEffect(() => {
         
         if(timer===0) return setStop(true);
         const interval = setInterval(() => {
             setTimer(prev => prev-1);
         }, 1000);
-        if(timeFreeze) return clearInterval(interval);
+        if(timeFreez) return clearInterval(interval);
         return ()=> clearInterval(interval);
         
     },[setStop,timer]);
@@ -17,11 +17,13 @@ export default function Timer({setStop,questionNumber,setTimeFreeze,timeFreeze})
 
     useEffect(() => {
         setTimeFreeze(false);
-        if(questionNumber>5){
+        if(questionNumber<=10 && questionNumber >5){
             setTimer(60);
+            setTimeAmount(60);
         }
         else if(questionNumber>10){
             setTimer(180);
+            setTimeAmount(180);
         }
         else{
             setTimer(45);

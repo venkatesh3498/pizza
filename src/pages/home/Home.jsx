@@ -2,7 +2,7 @@ import '../index.css';
 import './home.css';
 
 import React from 'react'
-import { Sidebar } from '../../sidebar/Sidebar';
+import { Sidebar } from '../../components/sidebar/Sidebar';
 
 function Home() {
     return (
@@ -11,7 +11,15 @@ function Home() {
             <Sidebar />
             </div>
             <div className="home">
-                <h1>This Is For Home Page</h1>
+                <div className="body">
+                    <div className="header">
+                        <h2>Welcome To Eatland 🤤</h2>
+                        <input type="search" placeholder="search....."/>
+                    </div>
+                </div>
+                <div className="cart">
+                    This Is From Cart
+                </div>
             </div>
         </div>
     )

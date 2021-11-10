@@ -1,0 +1,32 @@
+.home{
+    background-color: #ffffff;
+    width: 81vw;
+    height: 92vh;
+    margin: 4vh 2vh 4vh 2vh;
+    justify-content: center;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+}
+.body{
+    flex-basis: 60vw;
+    flex-grow: 1;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2%;
+    justify-content: space-around;
+}
+.header input{
+    flex-basis: 20vh;
+    flex-shrink: 1;
+    border: none;
+    border-bottom: 1px solid;
+    outline: none;
+}
+
+.cart{
+    flex-basis: 18vw;
+    flex-grow: 1;
+}

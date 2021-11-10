@@ -1,0 +1,48 @@
+export const itemData = [
+    {
+        name:"All",
+        src:""
+    },
+    {
+        name:"Burgers",
+        src:""
+    },
+    {
+        name:"Pizzas",
+        src:""
+    },
+    {
+        name:"Salads",
+        src:""
+    },
+    {
+        name:"Deserts",
+        src:""
+    },
+    {
+        name:"Drinks",
+        src:""
+    }
+];
+export const navList= [ 
+    {
+        name:"Home",
+        src:""
+    },
+    {
+        name:"Settings",
+        src:""
+    },
+    {
+        name:"Orders",
+        src:""
+    },
+    {
+        name:"Login",
+        src:""
+    },
+    {
+        name:"Logout",
+        src:""
+    }
+];

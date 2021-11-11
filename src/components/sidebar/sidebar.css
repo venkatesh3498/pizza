@@ -1,5 +1,37 @@
 .sidebar{
     width: 14vw;
     height: 100vh;
-    padding: 10vh 2vh;
+    padding: 7vh 1vh 7vh 1vh;
+    text-align: center;
+}
+.user-pic{
+    width: 50%;
+    height: 50%;
+    border: white 5px solid;
+    border-radius: 35px;
+}
+.fill{
+    fill: black;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+}
+.item{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: 15px;
+}
+.item p{
+    margin-left: 5%;
+    padding: 10px;
+}
+.item:hover{
+    background-color: #F87193;
+    border-radius: 20px;
+}
+.item:hover .fill{
+    fill: white;
+    background-color: #EC6083;
+  
 }

@@ -21,12 +21,13 @@
     flex-direction: row;
     width: 80%;
     margin: 15px;
+    cursor: pointer;
 }
 .item p{
     margin-left: 5%;
     padding: 10px;
 }
-.item:hover{
+.item:hover,.activ{
     background-color: #F87193;
     border-radius: 20px;
 }
@@ -34,4 +35,8 @@
     fill: white;
     background-color: #EC6083;
   
+}
+.activee{
+    fill: white;
+    background-color: #EC6083;
 }

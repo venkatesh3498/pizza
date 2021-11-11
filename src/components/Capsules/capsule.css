@@ -7,6 +7,7 @@
     width: 80px;
     border-radius: 500px;
     align-items: center;
+    cursor: pointer;
 }
 .cap-img{
     width: 60px;

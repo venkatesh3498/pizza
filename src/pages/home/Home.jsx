@@ -2,12 +2,9 @@ import '../index.css';
 import './home.css';
 import React,{useState} from 'react'
 import { Sidebar } from '../../components/sidebar/Sidebar';
-import burger from '../../Assets/Burger_perspective_matte_s.png';
-import pizza from '../../Assets/Pizza_perspective_matte_s.png';
-import desert from '../../Assets/Donut_perspective_matte_s.png';
-import drink from '../../Assets/can-dynamic-premium.png';
-import Data from '../../Data';
+import {Data,Items }from '../../Data';
 import Capsule from '../../components/Capsules/Capsule';
+import Singleitem from '../../components/singleitem/Singleitem';
 
 
 
@@ -28,6 +25,12 @@ function Home() {
                        {Data.map(data=>{
                            return(<Capsule data ={data} active={active} setActive={setActive} />)
                        })}
+                        
+                    </div>
+                    <div className="items">
+                        {Items.map(item=>{
+                            return (<Singleitem item={item} />);
+                        })}
                         
                     </div>
                 </div>

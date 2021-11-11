@@ -1,0 +1,19 @@
+.product{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content:space-between;
+    margin:5% 0% 0% 0%;
+    padding:2%;
+    align-items:center;
+}
+.product:not(:last-child){
+    border-bottom: 2px solid black;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+}
+.product img{
+    width: 120px;
+    height: 120px;
+}

@@ -1,0 +1,18 @@
+.capsule{
+    display: flex;
+    flex-direction: column;
+    background-color:#F5F6F7;
+    justify-content: space-evenly;
+    height: 140px;
+    width: 80px;
+    border-radius: 500px;
+    align-items: center;
+}
+.cap-img{
+    width: 60px;
+    height: 60px;
+}
+.capsule:hover,.active{
+    box-shadow:  5px -5px 10px #cecece,
+             -5px 5px 10px #f2f2f2;
+}

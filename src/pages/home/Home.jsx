@@ -2,11 +2,19 @@ import '../index.css';
 import './home.css';
 import React,{useState} from 'react'
 import { Sidebar } from '../../components/sidebar/Sidebar';
+import burger from '../../Assets/Burger_perspective_matte_s.png';
+import pizza from '../../Assets/Pizza_perspective_matte_s.png';
+import desert from '../../Assets/Donut_perspective_matte_s.png';
+import drink from '../../Assets/can-dynamic-premium.png';
+import Data from '../../Data';
+import Capsule from '../../components/Capsules/Capsule';
+
+
 
 function Home() {
     const [active,setActive] = useState("null");
     return (
-        <div className="main">
+        <div className="main" >
             <div className="sidebar">
             <Sidebar />
             </div>
@@ -17,42 +25,10 @@ function Home() {
                         <input type="search" placeholder="search....."/>
                     </div>
                     <div className="capsules">
-                        <div className={`capsule ${active}`}  onClick={()=>{setActive("active")}}>
-                            <img src="https://img.icons8.com/external-flatart-icons-lineal-color-flatarticons/64/000000/external-dish-hotel-services-flatart-icons-lineal-color-flatarticons.png"
-                                className="cap-img"
-                            />
-                            <p>All</p>
-                        </div>
-                        <div className={`capsule ${active}`}  onClick={()=>{setActive("active")}}>
-                            <img src='../../Assets/Burger_perspective_matte_s.png'
-                                className="cap-img"
-                            />
-                            <p>Burgers</p>
-                        </div>
-                        <div className={`capsule ${active}`}  onClick={()=>{setActive("active")}}>
-                            <img src='./Assets/Pizza_perspective_matte_s.png'
-                                className="cap-img"
-                            />
-                            <p>Pizzas</p>
-                        </div>
-                        <div className={`capsule ${active}`}  onClick={()=>{setActive("active")}}>
-                            <img src="https://img.icons8.com/external-icongeek26-linear-colour-icongeek26/64/000000/external-salad-food-levitation-icongeek26-linear-colour-icongeek26.png"
-                                className="cap-img"
-                            />
-                            <p>Salads</p>
-                        </div>
-                        <div className={`capsule ${active}`}  onClick={()=>{setActive("active")}}>
-                            <img src='./Assets/Donut_perspective_matte_s.png' 
-                                className="cap-img"
-                            />
-                            <p>Deserts</p>
-                        </div>
-                        <div className={`capsule ${active}`}  onClick={()=>{setActive("active")}}>
-                            <img src='./Assets/can-dynamic-premium.png'
-                                className="cap-img"
-                            />
-                            <p>Drinks</p>
-                        </div>
+                       {Data.map(data=>{
+                           return(<Capsule data ={data} active={active} setActive={setActive} />)
+                       })}
+                        
                     </div>
                 </div>
                 <div className="cart">

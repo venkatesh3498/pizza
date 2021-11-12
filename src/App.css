@@ -9,13 +9,7 @@
   height: 100vh;
   overflow-y: hidden;
 }
-.Main{
-  display: flex;
-  flex-direction: row;
-  background-color: white;
-  margin: 2% 2% 2% 2%;
-  border-radius: 25px;
-  width: 82%;
-  /* justify-content: space-evenly; */
+::selection{
+  background: #E5E8FD;
 }
 

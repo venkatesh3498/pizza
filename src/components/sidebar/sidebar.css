@@ -10,28 +10,28 @@
     border: white 5px solid;
     border-radius: 35px;
 }
-.fill{
+.full{
     fill: black;
     background-color: white;
     border-radius: 20px;
     padding: 10px;
 }
-.item{
+.nav-but{
     display: flex;
     flex-direction: row;
     width: 80%;
     margin: 15px;
     cursor: pointer;
 }
-.item p{
+.nav-but p{
     margin-left: 5%;
     padding: 10px;
 }
-.item:hover,.activ{
+.nav-but:hover,.activ{
     background-color: #F87193;
     border-radius: 20px;
 }
-.item:hover .fill{
+.nav-but:hover .full{
     fill: white;
     background-color: #EC6083;
   

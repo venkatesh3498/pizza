@@ -1,45 +1,61 @@
 import './singleitem.css'
 import React,{useState} from 'react';
-import Modal from 'react-bootstrap/Modal';
-import Button from '@restart/ui/esm/Button';
-function Singleitem({item}) {
-    const [show, setShow] = useState(false);
+import Modal from 'react-modal';
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-   
+function Singleitem({item}) {
+    const customStyles = {
+        content: {
+          top: '50%',
+          left: '50%',
+          right: 'auto',
+          bottom: 'auto',
+          marginRight: '-50%',
+          borderColor:'#a7ade2',
+          backgroundColor:'#E4E5FD',
+          transform: 'translate(-50%, -50%)',
+          width:'600px',
+          textAlign:'center',
+          padding:'20px',
+          
+        },
+    };
+    const [modalIsOpen, setIsOpen] = useState(false);
+    function openModal() {
+        setIsOpen(true);
+      }
+    function closeModal() {
+        setIsOpen(false);
+      }
+
+    Modal.setAppElement('#root');
     return (
-        <div className="product" id="app">
-            <img src={item.pic} variant="primary" onClick={handleShow}/>
+        <div className="product">
+
+            <img src={item.pic}  onClick={openModal}/>
+            
+
             <div className="details">
                 <h2>{item.name}</h2> 
                 <p>{item.price}</p>
+                <button className="buton">Add</button>
             </div>
+            
             <Modal 
-                show={show} 
-                dialogClassName="modal-60w"
-                full-screen="sm-down"
-                onHide={handleClose}
-            
+                style={customStyles}
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
             >
-                <Modal.Header closeButton>
-                <Modal.Title>{item.name}</Modal.Title>
-                </Modal.Header>
+                
+                <h1 style={{padding:'10px'}} >{item.name}</h1>
+                <img src={item.pic} 
+                    style={{width:"300px",height:"300px"}}
+                />  
+                <p style={{padding:'10px',fontWeight:500}} > {item.desc} </p>
+                <button className="mod-but" >Add</button>
 
-                <Modal.Body> 
-                    <img src={item.pic} />
-                    <p> {item.desc}</p> 
-                </Modal.Body>
-                <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
-                    Close
-                </Button>
-    
-                </Modal.Footer>
             </Modal>
-            
         </div>
     )
 }
 
-export default Singleitem
+export default Singleitem;

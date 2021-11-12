@@ -17,3 +17,21 @@
     width: 120px;
     height: 120px;
 }
+.buton,.mod-but{
+    width: 60px;
+    height: 40px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-color:#AB97F3;
+    color: white;
+    text-align: center;
+    
+    margin-top: 3%;
+}
+
+.mod-but{
+    margin: 1%;
+}
+    
+    

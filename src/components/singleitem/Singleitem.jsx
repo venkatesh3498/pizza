@@ -6,7 +6,7 @@ function Singleitem({item}) {
     const customStyles = {
         content: {
           top: '50%',
-          left: '50%',
+          left: '49%',
           right: 'auto',
           bottom: 'auto',
           marginRight: '-50%',
@@ -25,19 +25,22 @@ function Singleitem({item}) {
       }
     function closeModal() {
         setIsOpen(false);
-      }
+    }
+    function handleAddToCart(){
+        console.log("added to cart");
+    }
 
     Modal.setAppElement('#root');
     return (
-        <div className="product">
+        <div className="product"  >
 
-            <img src={item.pic}  onClick={openModal}/>
+            <img src={item.pic} onClick={openModal}/>
             
 
             <div className="details">
                 <h2>{item.name}</h2> 
                 <p>{item.price}</p>
-                <button className="buton">Add</button>
+                <button className="buton" type="button" onClick={handleAddToCart}>Add</button>
             </div>
             
             <Modal 
@@ -52,7 +55,7 @@ function Singleitem({item}) {
                 />  
                 <p style={{padding:'10px',fontWeight:500}} > {item.desc} </p>
                 <button className="mod-but" >Add</button>
-
+                
             </Modal>
         </div>
     )

@@ -9,8 +9,9 @@
     flex-direction: row;
 }
 .body{
-    flex-basis: 60vw;
-    flex-grow: 1;
+    flex-basis: 55vw;
+    flex-grow: 0;
+    flex-shrink: 0;
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -23,7 +24,6 @@
     margin-top: 2%;
     justify-content: space-around;
     top: 0;
-    z-index: 999;
     padding-bottom: 20px;
     background-color: white;
     position: sticky;
@@ -53,4 +53,6 @@
 .cart{
     flex-basis: 18vw;
     flex-grow: 1;
+    padding: 1%;
+    border-left: 2px solid violet;
 }

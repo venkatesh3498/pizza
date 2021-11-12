@@ -26,10 +26,12 @@
 .nav-but p{
     margin-left: 5%;
     padding: 10px;
+    color: black !important;
 }
 .nav-but:hover,.activ{
     background-color: #F87193;
     border-radius: 20px;
+    color: white !important;
 }
 .nav-but:hover .full{
     fill: white;

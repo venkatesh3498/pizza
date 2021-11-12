@@ -5,6 +5,7 @@ import { Sidebar } from '../../components/sidebar/Sidebar';
 import {Data,Items }from '../../Data';
 import Capsule from '../../components/Capsules/Capsule';
 import Singleitem from '../../components/singleitem/Singleitem';
+import Sidecart from '../../components/sidecart/Sidecart';
 
 
 function Home() {
@@ -28,9 +29,6 @@ function Home() {
     })
     return (
         <div className="main" >
-            <div className="sidebar">
-            <Sidebar />
-            </div>
             <div className="home">
                 <div className="body">
                     <div className="header">
@@ -53,7 +51,7 @@ function Home() {
                     </div>
                 </div>
                 <div className="cart">
-                    This Is From Cart
+                    <Sidecart />
                 </div>
             </div>
         </div>

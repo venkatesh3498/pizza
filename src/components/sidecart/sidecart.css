@@ -1,0 +1,10 @@
+.cart-home{
+    text-align: center;
+}
+
+.empty-cart img{
+    /* background-image: url('../../Assets/Hands\ -\ Shopping\ Cart\ Error.png'); */
+    /* background-repeat: repeat; */
+    margin-top: 40%;
+    width: 100%;
+}

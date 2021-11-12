@@ -2,17 +2,17 @@ import '../index.css';
 import './home.css';
 import React,{useState} from 'react'
 import { Sidebar } from '../../components/sidebar/Sidebar';
-import {Data,Items }from '../../Data';
+import {Data }from '../../Data';
 import Capsule from '../../components/Capsules/Capsule';
 import Singleitem from '../../components/singleitem/Singleitem';
 import Sidecart from '../../components/sidecart/Sidecart';
 
 
-function Home() {
+function Home({items,cartItems,store}) {
     
     const [active,setActive] = useState("null");
     const [filtername,setFilterName] = useState("All")
-    const filteredItems = Items.filter(item=>{
+    const filteredItems = items.filter(item=>{
         if(filtername.toLowerCase()==="all"){
             return item;
         }
@@ -44,14 +44,14 @@ function Home() {
                     <div className="items">
                         {filteredItems.map(item=>{
                             return (
-                                    <Singleitem item={item} />  
+                                <Singleitem item={item} dispatch={store.dispatch} />  
                             );
                         })}
                         
                     </div>
                 </div>
                 <div className="cart">
-                    <Sidecart />
+                    <Sidecart cartItems={cartItems} />
                 </div>
             </div>
         </div>

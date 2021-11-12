@@ -54,5 +54,9 @@
     flex-basis: 18vw;
     flex-grow: 1;
     padding: 1%;
-    border-left: 2px solid violet;
+    /* border-left: 2px solid violet; */
+    overflow-y: scroll;
+}
+.cart::-webkit-scrollbar{
+    background-color: inherit;
 }

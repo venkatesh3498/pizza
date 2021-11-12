@@ -2,7 +2,8 @@ import './singleitem.css'
 import React,{useState} from 'react';
 import Modal from 'react-modal';
 
-function Singleitem({item}) {
+import { addToCart } from './../../actions/cartActions';
+function Singleitem({item,dispatch}) {
     const customStyles = {
         content: {
           top: '50%',
@@ -27,7 +28,7 @@ function Singleitem({item}) {
         setIsOpen(false);
     }
     function handleAddToCart(){
-        console.log("added to cart");
+        dispatch(addToCart(item));
     }
 
     Modal.setAppElement('#root');
@@ -39,7 +40,7 @@ function Singleitem({item}) {
 
             <div className="details">
                 <h2>{item.name}</h2> 
-                <p>{item.price}</p>
+                <p>₹{item.price}</p>
                 <button className="buton" type="button" onClick={handleAddToCart}>Add</button>
             </div>
             

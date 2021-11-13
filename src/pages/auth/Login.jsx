@@ -1,22 +1,36 @@
+import React,{useState} from 'react';
 
 import { Link } from 'react-router-dom';
 import './auth.css';
 import RandomPic from './RandomPic';
 function Login() {
+    const [showPass,setShowPass] = useState(false)
     return (
         <div className="auth-home">
             <div className="slider-container">
                 <RandomPic />
             </div>
             <div className="auth-card">
+                <div className="auth-desc">
+                    <h2>Login To Eatland</h2>
+                    <p>Welcome back! login with your credintials that<br /> you entered during registration</p>
+                </div>
+                
                 <div className="form">
-                    <input type="email" required placeholder="Enter Your Email" />
-                    <input type="password" required placeholder="Enter Password.." />
-                    <input type="submit" value="Login" />
-
+                    <div className="email">
+                        <img src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/20/000000/external-email-interface-kiranshastry-solid-kiranshastry-1.png"/>
+                        <input className="inp" type="email"  required placeholder="Email" />
+                    </div>
+                    <div className="password">
+                        <img src="https://img.icons8.com/metro/20/000000/lock-2.png"/>
+                        <input className="inp pass" type={showPass ? "text" : "password"} required placeholder="Password.." />
+                        {showPass ? <img onClick={()=>{setShowPass(false)}} src="https://img.icons8.com/material-sharp/20/000000/hide.png"/> :<img onClick={()=>{setShowPass(true)}} src="https://img.icons8.com/material-rounded/20/000000/visible.png"/>}
+                    </div>
+                    <input type="submit" className="form-but" value="Login" />
                 </div>
                 <div className="lore-link">
-                    <Link to="/register">Register</Link>
+                    Dont have an account?  
+                    <Link to="/register">  Register  </Link>
                 </div>
             </div> 
         </div>

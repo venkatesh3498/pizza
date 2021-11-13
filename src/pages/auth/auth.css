@@ -19,5 +19,45 @@
     border-radius: 20px 0% 0% 20px;
 }
 .auth-card{
-    width: 41vw;
+    width: 30vw;
+    margin: auto;
+    /* text-align: center; */
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.uname,.email,.password{
+    display: flex;
+    background-color: #F5F5F5;
+    flex-direction: row;
+    width: 95%;
+    padding: 3%;
+    margin-top: 5%;
+    border-radius: 10px;
+}
+.inp{
+    flex-grow: 10;
+    background-color:inherit;
+    outline: none;
+    border: none;
+    margin: 0% 1% 0% 5%;
+}
+.form-but{
+    padding: 3%;
+    width: 100%;
+    margin: 5% 0%;
+    border-radius: 10px;
+    outline: none;
+    color: white;
+    background-color: #323142;
+    border: none;
+}
+.auth-desc{
+    margin-bottom: 5%;
+}
+.lore-link{
+    text-align: center;
 }

@@ -3,6 +3,7 @@ import React,{useState} from 'react';
 import Modal from 'react-modal';
 
 import { addToCart } from './../../actions/cartActions';
+import { ReactDOM } from 'react-dom';
 function Singleitem({item,dispatch}) {
     const customStyles = {
         content: {
@@ -12,12 +13,12 @@ function Singleitem({item,dispatch}) {
           bottom: 'auto',
           marginRight: '-50%',
           borderColor:'#a7ade2',
-          backgroundColor:'#E4E5FD',
+          backgroundColor:'#EFF2FA',
           transform: 'translate(-50%, -50%)',
-          width:'600px',
+          width:'500px',
           textAlign:'center',
           padding:'20px',
-          
+          borderRadius:"20px",
         },
     };
     const [modalIsOpen, setIsOpen] = useState(false);
@@ -41,7 +42,7 @@ function Singleitem({item,dispatch}) {
             <div className="details">
                 <h2>{item.name}</h2> 
                 <p>₹{item.price}</p>
-                <button className="buton" type="button" onClick={handleAddToCart}>Add</button>
+                <button className="buton"  type="button" onClick={handleAddToCart}>Add</button>
             </div>
             
             <Modal 

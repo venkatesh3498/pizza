@@ -8,3 +8,16 @@
     display: flex;
     flex-direction: row;
 }
+.slider-container{
+    width: 40vw;
+    height: 92vh;
+    
+}
+.slider-container img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 0% 0% 20px;
+}
+.auth-card{
+    width: 41vw;
+}

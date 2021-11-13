@@ -2,7 +2,25 @@ import burger from './Assets/Burger_perspective_matte_s.png';
 import pizza from './Assets/Pizza_perspective_matte_s.png';
 import desserts from './Assets/Donut_perspective_matte_s.png';
 import drink from './Assets/can-dynamic-premium.png';
-
+import pic1 from './Assets/1.webp';
+import pic2 from './Assets/2.webp';
+import pic3 from './Assets/3.webp';
+import pic4 from './Assets/4.webp';
+import pic5 from './Assets/5.webp';
+import pic6 from './Assets/6.webp';
+import pic7 from './Assets/7.webp';
+import pic8 from './Assets/8.webp';
+import pic9 from './Assets/9.webp';
+import pic10 from './Assets/10.webp';
+import pic11 from './Assets/11.webp';
+import pic12 from './Assets/12.webp';
+import pic13 from './Assets/13.webp';
+import pic14 from './Assets/14.webp';
+import pic15 from './Assets/15.webp';
+import pic16 from './Assets/16.webp';
+import pic17 from './Assets/17.webp';
+import pic18 from './Assets/18.webp';
+import pic19 from './Assets/19.webp';
 const Data = [
     {
         name:"All",
@@ -136,5 +154,64 @@ const Items=[
         pic:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/bdh5nsr1gk9wieb6ntfp"
     }
 ]
+const Pictures = [
+    {
+        src:pic1
+    },
+    {
+        src:pic2
+    },
+    {
+        src:pic3
+    },
+    {
+        src:pic4
+    },
+    {
+        src:pic5
+    },
+    {
+        src:pic6
+    },
+    {
+        src:pic7
+    },
+    {
+        src:pic8
+    },
+    {
+        src:pic9
+    },
+    {
+        src:pic10
+    },
+    {
+        src:pic11
+    },
+    {
+        src:pic12
+    },
+    {
+        src:pic13
+    },
+    {
+        src:pic14
+    },
+    {
+        src:pic15
+    },
+    {
+        src:pic16
+    },
+    {
+        src:pic17
+    },
+    {
+        src:pic18
+    },
+    {
+        src:pic19
+    }
+]
 
-export{ Data , Items};
+export{ Data , Items,Pictures};

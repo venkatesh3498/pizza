@@ -3,7 +3,7 @@ import React,{useEffect,useState} from 'react';
 import { Pictures } from '../../Data'
 
 function RandomPic() {
-    const [picnum,setPicNum] = useState(0);
+    const [picnum,setPicNum] = useState(14);
     const piclist = Pictures.map(pic=>{
         return pic;
     });
@@ -11,14 +11,14 @@ function RandomPic() {
     useEffect(() => {
         
         let interval = setInterval(()=>{
-            if(picnum===18){
-                setPicNum(0);
-            }
-            else{
-                setPicNum(picnum+1);
-            }
-            // setPicNum(Math.floor(Math.random() * piclist.length));
-        },4000)
+            // if(picnum===18){
+            //     setPicNum(0);
+            // }
+            // else{
+            //     setPicNum(picnum+1);
+            // }
+            setPicNum(Math.floor(Math.random() * piclist.length));
+        },2000)
         return () => {
             clearInterval(interval);
         }

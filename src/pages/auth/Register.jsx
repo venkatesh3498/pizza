@@ -30,10 +30,10 @@ function Register() {
                         <input className="inp pass" type={showPass ? "text" : "password"} required placeholder="Password.." />
                         {showPass ? <img onClick={()=>{setShowPass(false)}} src="https://img.icons8.com/material-sharp/20/000000/hide.png"/> :<img onClick={()=>{setShowPass(true)}} src="https://img.icons8.com/material-rounded/20/000000/visible.png"/>}
                     </div>
-                    <input type="submit" className="form-but" value="Login" />
+                    <input type="submit" className="form-but" value="SignUp" />
                 </div>
                 <div className="lore-link">
-                    Dont have an account?  
+                    Have an account?  
                     <Link to="/login">  Login  </Link>
                 </div>
             </div> 

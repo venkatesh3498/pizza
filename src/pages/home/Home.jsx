@@ -7,7 +7,7 @@ import Singleitem from "../../components/singleitem/Singleitem";
 import Sidecart from "../../components/sidecart/Sidecart";
 
 function Home({ items, cartItems, store }) {
-  const [active, setActive] = useState("null");
+  const [active, setActive] = useState("All");
   const [filtername, setFilterName] = useState("All");
   const filteredItems = items.filter((item) => {
     if (filtername.toLowerCase() === "all") {

@@ -1,10 +1,48 @@
 .cart-home{
-    text-align: center;
+    display: flex;
+    flex-direction: column;
 }
-
+.cart-item{
+    display: flex;
+    flex-direction: column;
+}
+.empty-cart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .empty-cart img{
     /* background-image: url('../../Assets/Hands\ -\ Shopping\ Cart\ Error.png'); */
     /* background-repeat: repeat; */
-    margin-top: 40%;
+    /* margin-top: 40%; */
     width: 100%;
+    
+
+}
+.inc-but,.dec-but{
+    border: none;
+    outline: none;
+    background-color: inherit;
+}
+.c-item-desc{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.cart-qn-but{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+.cart-but{
+    border: none;
+    outline: none;
+    background-color: #323412;
+    color: #ffffff;
+    padding: 10px 30px;
+    border-radius: 5px;
+}
+.cart-foot{
+    display: flex;
+    flex-direction: column;
 }

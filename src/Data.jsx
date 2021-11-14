@@ -51,6 +51,7 @@ const Items=[
     {
         type:"burgers",
         name:"Cheese Lava American Chicken Burger",
+        qty:1,
         price:247.65,
         desc:"A sinfully oozing cheesy Veg patty and Flame Grilled Chicken patty, loaded with Roasted Chipotle sauce, Red Onions, Jalapeno & a relishing salad, layered between freshly toasted Buns.",
         pic:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/nk97pp8xd8ijlcpexlmy"
@@ -59,6 +60,7 @@ const Items=[
         type:"burgers",
         name:"Cheese Lava American Burger - Veg",
         price:219.25,
+        qty:1,
         desc:"A sinfully oozing cheesy Veg patty, loaded with Roasted Chipotle sauce, Red Onions, Jalapeno & a relishing salad, layered between freshly toasted Buns.",
         pic:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/x6ktcvyh1uswspnlcmej"
     },
@@ -66,6 +68,7 @@ const Items=[
         type:"burgers",
         name:"McSpicy Premium Veg Burger",
         price:209.52,
+        qty:1,
         desc:"A spicy Paneer patty, shredded Lettuce topped with Jalapeno and Cheese slice, Spicy Cocktail sauce & Cheese sauce layered between toasted Whole Wheat Buns.",
         pic:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/qgmq5t3eyxx13jkhlnym"
     },
@@ -73,6 +76,7 @@ const Items=[
         type:"pizzas",
         name:"Schezwan Chicken Pizza",
         price:319,
+        qty:1,
         desc:"Schezwan chicken, onion, capsicum and spring onion.",
         pic:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/dzseyjlcwvskci44ltno"
     },
@@ -80,6 +84,7 @@ const Items=[
         type:"pizzas",
         name:"Paneer Makhani Pizza",
         price:319,
+        qty:1,
         desc:"Capsicum, onion, red paprika and paneer tikka in tandoori sauce.",
         pic:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/lielkhosn4yksvdb50dg"
     },
@@ -87,6 +92,7 @@ const Items=[
         type:"pizzas",
         name:"Chicken Tornado Pizza",
         price:339,
+        qty:1,
         desc:"Spicy chicken keema, chicken tikka capsicum, onion.",
         pic:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/w87kdisixddxa4oymebh"
     },
@@ -94,6 +100,7 @@ const Items=[
         type:"salads",
         name:"Roasted chicken Strips Salad",
         price:287,
+        qty:1,
         desc:"Everything but the bread!",
         pic:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/yumaujqs2hm2ozdg7sb3"
     },
@@ -101,6 +108,7 @@ const Items=[
         type:"salads",
         name:"Veggie Delite Salad",
         price:259,
+        qty:1,
         desc:"Everything but the bread!",
         pic:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/wubzfcrbkt6x1mbp67ez"
     },
@@ -108,6 +116,7 @@ const Items=[
         type:"salads",
         name:"Paneer Tikka Salad",
         price:278,
+        qty:1,
         desc:"Everything but the bread!",
         pic:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/nhlophub642elaxii2ok"
     },
@@ -115,6 +124,7 @@ const Items=[
         type:"desserts",
         name:"One Shot 3 Birds Triple Sundae",
         price:175,
+        qty:1,
         desc:"A combination of 3 scoops of pista, butterscotch and anjeer badam with different sauces and lots of nuts, simply solid, a smart one to compliment your style.",
         pic:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/wcldffdwrkm98fnkmc8x"
     },
@@ -122,6 +132,7 @@ const Items=[
         type:"desserts",
         name:"World'S Best Chocolate Triple Sundae",
         price:175,
+        qty:1,
         desc:"A combo of Belgium dark chocolate, chocolate, choco chips with lots of nuts & sauces.",
         pic:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/wx7mejlo8sg1nhsf1vn0"
     },
@@ -129,6 +140,7 @@ const Items=[
         type:"desserts",
         name:"Black Forest McFlurry Medium",
         price:99.04,
+        qty:1,
         desc:"Black Forest McFlurry Medium",
         pic:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/vorqylpqff1xngmfkx2y"
     },
@@ -136,6 +148,7 @@ const Items=[
         type:"drinks",
         name:"Chocolate Thick Shake",
         price:139,
+        qty:1,
         desc:"Our signature chocolate thick shake.",
         pic:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/kj9hypk5lgl15fawayiy"
     },
@@ -143,6 +156,7 @@ const Items=[
         type:"drinks",
         name:"Berry Blast Thick Shake",
         price:139,
+        qty:1,
         desc:"Berry Blast Thick Shake",
         pic:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/yzkpob5ifvenc79yqjvs"
     },
@@ -150,6 +164,7 @@ const Items=[
         type:"drinks",
         name:"Coke",
         price:82.86,
+        qty:1,
         desc:"The perfect companion to your burger, fries and everything nice.",
         pic:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/bdh5nsr1gk9wieb6ntfp"
     }

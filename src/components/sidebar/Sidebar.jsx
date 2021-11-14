@@ -2,7 +2,7 @@ import './sidebar.css';
 import React,{useState} from 'react';
 import {Link} from 'react-router-dom'
 export const Sidebar = () => {
-    const [activ,setActiv] = useState();
+    const [activ,setActiv] = useState("Home");
     const authStatus = false;
     return (
         <div className="sidebar">

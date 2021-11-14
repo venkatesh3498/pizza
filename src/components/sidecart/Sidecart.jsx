@@ -1,8 +1,8 @@
 import "./sidecart.css";
 import pic from "../../Assets/Hands - Shopping Cart Error.png";
+import { useState } from "react";
 function Sidecart({ cartItems }) {
   const cartEmptyStatus = true;
-  console.log(cartItems);
   let price = 0;
   return (
     <div className="cart-home">
@@ -14,16 +14,29 @@ function Sidecart({ cartItems }) {
         </div>
       ) : (
         <div className="cart-item">
+          <div className="cart-head">
+            <h3>Cart</h3>
+            <p>{cartItems.length>1?`${cartItems.length}items`:`${cartItems.length}item`}</p>
+          </div>
           {cartItems.map((ite) => {
             price += ite.price;
             return (
               <div className="c-item-desc">
                 <p>{ite.name}</p>
+                <div className="cart-qn-but">
+                  <button className="inc-but" >+</button>
+                  {ite.qty}
+                  <button className="dec-but" >-</button>
+                </div>
                 <p>{ite.price}</p>
               </div>
             );
           })}
-          <button>Checkout {Number.parseFloat(price).toFixed(2)} </button>
+          <div className="cart-foot">
+            <h3>Sub Total {Number.parseFloat(price).toFixed(2)}</h3>
+            <button className="cart-but">Place Order →</button>
+          </div>
+          
         </div>
       )}
     </div>

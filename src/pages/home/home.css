@@ -49,6 +49,11 @@
     
 
 }
+.diss{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
 
 .cart{
     flex-basis: 18vw;

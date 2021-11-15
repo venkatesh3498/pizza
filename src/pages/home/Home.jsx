@@ -7,6 +7,7 @@ import Singleitem from "../../components/singleitem/Singleitem";
 import Sidecart from "../../components/sidecart/Sidecart";
 
 function Home({ items, cartItems, store }) {
+  console.log(window.location.pathname);
   const [active, setActive] = useState("All");
   const [filtername, setFilterName] = useState("All");
   const filteredItems = items.filter((item) => {
@@ -47,8 +48,11 @@ function Home({ items, cartItems, store }) {
             })}
           </div>
           <div className="items">
+            {
+              filteredItems.length===0?<div className="diss">sorry we couldn't find any result <img src="https://img.icons8.com/ios/150/000000/disappointed--v2.png" /> </div>:""
+            }
             {filteredItems.map((item) => {
-              return <Singleitem item={item} dispatch={store.dispatch} />;
+              return <Singleitem item={item} dispatch={store.dispatch}/>;
             })}
           </div>
         </div>

@@ -1,8 +1,11 @@
 import './sidebar.css';
 import React,{useState} from 'react';
-import {Link} from 'react-router-dom'
-export const Sidebar = () => {
-    const [activ,setActiv] = useState("Home");
+import {Link } from 'react-router-dom'
+export const Sidebar = (props)=>{
+    let path = props.path;
+    path = path.substring(1);
+    console.log(path);
+    const [activ,setActiv] = useState(path||"Home");
     const authStatus = false;
     return (
         <div className="sidebar">
@@ -14,7 +17,7 @@ export const Sidebar = () => {
                 <h2>Name</h2>
             </div>
             <div className="listItmes">
-                <Link to="/">
+                <Link to="/" >
                     <div className={activ==="Home" ? "nav-but Home activ":"nav-but Home"} onClick={()=>{setActiv("Home")}}>
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                             width="30" height="30"
@@ -27,7 +30,7 @@ export const Sidebar = () => {
                         <p>Home</p>
                     </div>
                 </Link>
-                <Link to="/settings">
+                <Link to="/settings" >
                     <div className={activ==="settings" ? "nav-but settings activ":"nav-but settings"} onClick={()=>{setActiv("settings")}}>
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                             width="30" height="30"
@@ -39,7 +42,7 @@ export const Sidebar = () => {
                         <p>Settings</p>
                     </div>
                 </Link>
-                <Link to="/orders">
+                <Link to="/orders" >
                     <div className={activ==="orders" ? "nav-but orders activ":"nav-but orders"} onClick={()=>{setActiv("orders")}}>
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                             width="30" height="30"
@@ -52,7 +55,7 @@ export const Sidebar = () => {
                     </div>
                 </Link>
                 {authStatus ? (
-                    <Link to="/logout"> 
+                    <Link to="/logout" > 
                         <div classNamae={activ=="auth" ? "nav-but auth activ":"nav-but auth"} onClick={()=>{setActiv("auth")}}>
                             <img className={activ==="auth" ? "full auth activee":"full auth"} src="https://img.icons8.com/ios-glyphs/30/logout-rounded-left.png"/> 
                             <p>Logout</p>

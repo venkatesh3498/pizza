@@ -18,14 +18,15 @@ class App extends React.Component{
     store.dispatch(addItems(Items));
   }
   render(){
+    let path = window.location.pathname;
     const {list,cartList} = this.props.store.getState();
     return (
       <div className="app">
         <div className="sidebar">
-          <Sidebar />
+          <Sidebar path={path} />
         </div>
         <Routes>
-          <Route path="/" element={<Home store={this.props.store} items={list} cartItems={cartList} />} />
+          <Route path="/"  element={<Home store={this.props.store} items={list} cartItems={cartList} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/settings" element={<Settings />} />

@@ -56,15 +56,15 @@ export const Sidebar = (props)=>{
                 </Link>
                 {authStatus ? (
                     <Link to="/logout" > 
-                        <div classNamae={activ=="auth" ? "nav-but auth activ":"nav-but auth"} onClick={()=>{setActiv("auth")}}>
-                            <img className={activ==="auth" ? "full auth activee":"full auth"} src="https://img.icons8.com/ios-glyphs/30/logout-rounded-left.png"/> 
+                        <div classNamae={activ=="logout" ? "nav-but auth activ":"nav-but auth"} onClick={()=>{setActiv("logout")}}>
+                            <img className={activ==="logout" ? "full auth activee":"full auth"} src="https://img.icons8.com/ios-glyphs/30/logout-rounded-left.png"/> 
                             <p>Logout</p>
                         </div>
                     </Link>
                 ):(
                     <Link to="/login">
-                        <div className={activ=="auth" ? "nav-but auth activ":"nav-but auth"} onClick={()=>{setActiv("auth")}}>
-                            <img className={activ==="auth" ? "full auth activee":"full auth"} src="https://img.icons8.com/ios-glyphs/30/login-rounded-right--v1.png"/>
+                        <div className={activ=="login" ? "nav-but auth activ":"nav-but auth"} onClick={()=>{setActiv("login")}}>
+                            <img className={activ==="login" ? "full auth activee":"full auth"} src="https://img.icons8.com/ios-glyphs/30/login-rounded-right--v1.png"/>
                             <p>Login</p>
                         </div>
                     </Link>

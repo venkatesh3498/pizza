@@ -19,6 +19,7 @@ function Settings() {
     "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=580&q=80";
   return (
     <div className="setting-home">
+      <h3 >Change Profile Details:</h3>
       <div className="setting-user-pic">
         <input
           className="file-drop"
@@ -33,7 +34,6 @@ function Settings() {
           type="file"
         />
       </div>
-      <h3>Change Profile Details:</h3>
       <div className="settings-user-profile-data">
         <input type="email" name="Email" placeholder="Email.." />
         <input type="text" name="Name" placeholder="Name" />

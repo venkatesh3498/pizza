@@ -1,10 +1,10 @@
 import './singleitem.css'
 import React,{useState} from 'react';
 import Modal from 'react-modal';
-
-import { addToCart } from './../../actions/cartActions';
+import {useDispatch,useSelector} from 'react-redux';
 import { ReactDOM } from 'react-dom';
-function Singleitem({item,dispatch}) {
+import { addToCart } from './../../actions/cartActions';
+function Singleitem({item}) {
     const customStyles = {
         content: {
           top: '50%',
@@ -28,13 +28,15 @@ function Singleitem({item,dispatch}) {
     function closeModal() {
         setIsOpen(false);
     }
+    const dispatch = useDispatch();
     function handleAddToCart(){
-        dispatch(addToCart(item));
+        let quantity = item.qty;
+        dispatch(addToCart(item,quantity));
     }
 
     Modal.setAppElement('#root');
     return (
-        <div className="product"  >
+        <div className="product" key={item._id}  >
 
             <img src={item.pic} onClick={openModal}/>
             

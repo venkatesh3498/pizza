@@ -1,17 +1,21 @@
-export const ADD_ITEMS = "ADD_ITEMS";
 export const ADD_TO_CART = "ADD_TO_CART";
+export const DELETE_FROM_CART = "DELETE_FROM_CART";
 
 
+export const addToCart=(item,quantity)=>(dispatch,getState)=>{
+   
 
-export function addItems(items){
-    return{
-        type:ADD_ITEMS,
-        items
-    }
-}
-export function addToCart(item){
-    return{
+    dispatch({
         type:ADD_TO_CART,
-        item
-    }
+        payload:item
+    })
+    const cartItems = getState().cartReducers.cartItems
+
+    localStorage.setItem('cartItems',JSON.stringify(cartItems));
+}
+export const deleteFromCart=(item)=>dispatch=>{
+    dispatch({
+        type:DELETE_FROM_CART,
+        payload:item
+    })
 }

@@ -10,7 +10,6 @@ export const getAllItems =()=> async dispatch=>{
     })
     try {
         const response = await axios.get('http://localhost:5000/api/getpizzas');
-        console.log(response);
         dispatch({type:GET_ITEMS_SUCCESS,payload: response.data})
 
         

@@ -1,24 +1,36 @@
-import { ADD_TO_CART,ADD_ITEMS } from "../actions/cartActions";
+import { ADD_TO_CART, DELETE_FROM_CART } from "../actions/cartActions";
 
-const initialState = {
-    list:[],
-    cartList:[]
-}
+export default function cartReducers(
+  state = {
+    cartItems: [],
+  },
+  action
+) {
+  switch (action.type) {
+    case DELETE_FROM_CART:
+      const filteredCart = state.cartItems.filter((item) => {
+        return item != action.payload;
+      });
+      return {
+        ...state,
+        cartItems: filteredCart,
+      };
+    case ADD_TO_CART:
+      const alreadyExist = state.cartItems.find(item=>{
+        return  item._id===action.payload._id
+      })
+      if(alreadyExist){
+        return{
+            ...state,
+            cartItems:state.cartItems.map(item=>item._id===action.payload._id ? {...item,qty:item.qty+action.payload.qty}:{item})
+        }
+      }else{
+      return {
+        ...state,
+        cartItems: [action.payload, ...state.cartItems],
+      };}
 
-export default function items(state = initialState,action){
-    switch(action.type){
-        case ADD_ITEMS:
-            return{
-                ...state,
-                list:action.items
-            }
-        case ADD_TO_CART:
-            return{
-                ...state,
-                cartList:[action.item,...state.cartList]
-            }
-
-        default:
-            return state;
-    }
+    default:
+      return state;
+  }
 }

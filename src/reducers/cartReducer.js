@@ -22,7 +22,7 @@ export default function cartReducers(
       if(alreadyExist){
         return{
             ...state,
-            cartItems:state.cartItems.map(item=>item._id===action.payload._id ? {...item,qty:item.qty+action.payload.qty}:{item})
+            cartItems:state.cartItems.map(item=> item._id===action.payload._id ? action.payload : item)
         }
       }else{
       return {

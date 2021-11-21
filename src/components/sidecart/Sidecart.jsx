@@ -5,16 +5,10 @@ import { addToCart } from "../../actions/cartActions";
 
 function Sidecart() {
   const cartItems = useSelector(state=>state.cartReducers.cartItems);
+  console.log(cartItems);
   const dispatch = useDispatch();
   let price = 0;
-  function handleInncrement(item){
-    let qty =1;
-    dispatch(addToCart(item,qty));
-  }
-  function handleDecrement(item){
-    let qty = -1;
-    dispatch(addToCart(item,qty=-1));
-  }
+  
   return (
     
     <div className="cart-home">
@@ -31,16 +25,16 @@ function Sidecart() {
             <p>{cartItems.length>1?`${cartItems.length}items`:`${cartItems.length}item`}</p>
           </div>
           {cartItems.map((item) => {
-            price += item.price * item.qty;
+            price += item.price;
             return (
               <div className="c-item-desc">
                 <p>{item.name}</p>
                 <div className="cart-qn-but">
-                  <button className="inc-but" onClick={handleInncrement}  >+</button>
-                  {item.qty}
-                  <button className="dec-but" onClick={handleDecrement} >-</button>
+                  <button className="inc-but" onClick={()=>{dispatch(addToCart(item,item.quantity+1))}}  >+</button>
+                  {item.quantity}
+                  <button className="dec-but" onClick={()=>{dispatch(addToCart(item,item.quantity-1))}} >-</button>
                 </div>
-                <p>{Number.parseFloat(item.price * item.qty).toFixed(2)}</p>
+                <p>{Number.parseFloat(item.price).toFixed(2)}</p>
               </div>
             );
           })}

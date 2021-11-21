@@ -30,8 +30,7 @@ function Singleitem({item}) {
     }
     const dispatch = useDispatch();
     function handleAddToCart(){
-        let quantity = item.qty;
-        dispatch(addToCart(item,quantity));
+        dispatch(addToCart(item,item.qty));
     }
 
     Modal.setAppElement('#root');

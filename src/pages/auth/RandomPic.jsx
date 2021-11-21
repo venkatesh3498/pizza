@@ -18,7 +18,7 @@ function RandomPic() {
             //     setPicNum(picnum+1);
             // }
             setPicNum(Math.floor(Math.random() * piclist.length));
-        },2000)
+        },4000)
         return () => {
             clearInterval(interval);
         }

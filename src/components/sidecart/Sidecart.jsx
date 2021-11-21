@@ -25,7 +25,7 @@ function Sidecart() {
             <p>{cartItems.length>1?`${cartItems.length}items`:`${cartItems.length}item`}</p>
           </div>
           {cartItems.map((item) => {
-            price += item.price;
+            price += item.price*item.quantity;
             return (
               <div className="c-item-desc">
                 <p>{item.name}</p>
@@ -34,7 +34,7 @@ function Sidecart() {
                   {item.quantity}
                   <button className="dec-but" onClick={()=>{dispatch(addToCart(item,item.quantity-1))}} >-</button>
                 </div>
-                <p>{Number.parseFloat(item.price).toFixed(2)}</p>
+                <p>{Number.parseFloat(item.price*item.quantity).toFixed(2)}</p>
               </div>
             );
           })}

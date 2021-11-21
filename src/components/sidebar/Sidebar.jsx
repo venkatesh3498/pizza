@@ -6,7 +6,7 @@ export const Sidebar = (props)=>{
     path = path.substring(1);
     console.log(path);
     const [activ,setActiv] = useState(path||"Home");
-    const authStatus = false;
+    const authStatus = localStorage.getItem('currentUser');
     return (
         <div className="sidebar">
             <div className="head">
@@ -55,10 +55,11 @@ export const Sidebar = (props)=>{
                     </div>
                 </Link>
                 {authStatus ? (
-                    <Link to="/logout" > 
+                    <Link to="/login">
+
                         <div classNamae={activ=="logout" ? "nav-but auth activ":"nav-but auth"} onClick={()=>{setActiv("logout")}}>
                             <img className={activ==="logout" ? "full auth activee":"full auth"} src="https://img.icons8.com/ios-glyphs/30/logout-rounded-left.png"/> 
-                            <p>Logout</p>
+                            <p onClick={localStorage.removeItem("currentUser")} >Logout</p>
                         </div>
                     </Link>
                 ):(

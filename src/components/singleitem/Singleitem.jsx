@@ -57,7 +57,7 @@ function Singleitem({item}) {
                     style={{width:"300px",height:"300px"}}
                 />  
                 <p style={{padding:'10px',fontWeight:500}} > {item.desc} </p>
-                <button className="mod-but" >Add</button>
+                <button className="mod-but" onClick={handleAddToCart} >Add</button>
                 
             </Modal>
         </div>

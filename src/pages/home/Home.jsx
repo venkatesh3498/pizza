@@ -60,7 +60,7 @@ function Home() {
           </div>
           <div className="items">
             {
-              loading ? (filteredItems.length===0||error?<div className="diss">sorry we couldn't find any result <img src="https://img.icons8.com/ios/150/000000/disappointed--v2.png" /> </div>:""):(
+              loading ? (filteredItems.length===0||error?<div className="diss">sorry we couldn't find any products <img src="https://img.icons8.com/ios/150/000000/disappointed--v2.png" /> </div>:""):(
                 
                 filteredItems.map((item) => {
                   return <Singleitem item={item} />;

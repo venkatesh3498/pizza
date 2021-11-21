@@ -7,7 +7,7 @@ export const addToCart=(item,quantity)=>(dispatch,getState)=>{
         name : item.name ,
         _id : item._id,
         quantity : Number(quantity) ,
-        price : item.price * quantity
+        price : item.price 
 
     }
     if(cartItem.quantity>10){

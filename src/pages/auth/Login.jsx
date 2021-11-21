@@ -1,10 +1,27 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 
 import { Link } from 'react-router-dom';
 import './auth.css';
 import RandomPic from './RandomPic';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginUser } from '../../actions/userActions';
 function Login() {
-    const [showPass,setShowPass] = useState(false)
+    const [showPass,setShowPass] = useState(false);
+    const [email,setEmail] = useState('');
+    const [password,setPassword] = useState('');
+    const dispatch = useDispatch();
+    const loginStatus = localStorage.getItem("currentUser");
+    useEffect(()=>{
+        if(loginStatus){
+            window.location.href="/"
+        }
+    },[loginStatus])
+    function Userlogin(){
+        const user= {
+            email,password
+        }
+        dispatch(loginUser(user)); 
+    }
     return (
         <div className="auth-home">
             <div className="slider-container">
@@ -19,14 +36,14 @@ function Login() {
                 <div className="form">
                     <div className="email">
                         <img src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/20/000000/external-email-interface-kiranshastry-solid-kiranshastry-1.png"/>
-                        <input className="inp" type="email"  required placeholder="Email" />
+                        <input className="inp" type="email" value={email} onChange={(e)=>{setEmail(e.target.value)}}  required placeholder="Email" />
                     </div>
                     <div className="password">
                         <img src="https://img.icons8.com/metro/20/000000/lock-2.png"/>
-                        <input className="inp pass" type={showPass ? "text" : "password"} required placeholder="Password.." />
+                        <input className="inp pass" type={showPass ? "text" : "password"} value={password} onChange={(e)=>{setPassword(e.target.value)}} required placeholder="Password.." />
                         {showPass ? <img onClick={()=>{setShowPass(false)}} src="https://img.icons8.com/material-sharp/20/000000/hide.png"/> :<img onClick={()=>{setShowPass(true)}} src="https://img.icons8.com/material-rounded/20/000000/visible.png"/>}
                     </div>
-                    <input type="submit" className="form-but" value="Login" />
+                    <button onClick={Userlogin} className="form-but" >Login</button>
                 </div>
                 <div className="lore-link">
                     Dont have an account?  

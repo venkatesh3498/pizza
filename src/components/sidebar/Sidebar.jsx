@@ -1,12 +1,14 @@
 import './sidebar.css';
 import React,{useState} from 'react';
 import {Link } from 'react-router-dom'
+import { logoutUser } from './../../actions/userActions';
+import { useDispatch } from 'react-redux';
 export const Sidebar = (props)=>{
     let path = props.path;
     path = path.substring(1);
-    console.log(path);
+    const dispatch = useDispatch();
     const [activ,setActiv] = useState(path||"Home");
-    const authStatus = localStorage.getItem('currentUser');
+    const authStatus = true||localStorage.getItem('currentUser');
     return (
         <div className="sidebar">
             <div className="head">
@@ -55,13 +57,10 @@ export const Sidebar = (props)=>{
                     </div>
                 </Link>
                 {authStatus ? (
-                    <Link to="/login">
-
-                        <div classNamae={activ=="logout" ? "nav-but auth activ":"nav-but auth"} onClick={()=>{setActiv("logout")}}>
-                            <img className={activ==="logout" ? "full auth activee":"full auth"} src="https://img.icons8.com/ios-glyphs/30/logout-rounded-left.png"/> 
-                            <p onClick={localStorage.removeItem("currentUser")} >Logout</p>
-                        </div>
-                    </Link>
+                    <div classNamae={activ==="logout" ? "nav-but auth activ":"nav-but auth"} onClick={()=>{setActiv("logout")}}>
+                        <img className={activ==="logout" ? "auth full activee":"full auth"} src="https://img.icons8.com/ios-glyphs/30/logout-rounded-left.png"/> 
+                        <p onClick={()=>dispatch(logoutUser())} >Logout</p>
+                    </div>
                 ):(
                     <Link to="/login">
                         <div className={activ=="login" ? "nav-but auth activ":"nav-but auth"} onClick={()=>{setActiv("login")}}>

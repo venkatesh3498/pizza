@@ -57,6 +57,11 @@ form{
     color: white;
     background-color: #323142;
     border: none;
+    cursor: pointer;
+}
+.form-but:active{
+    box-shadow:  13px 13px 26px #5a5a5a,
+                 -13px -13px 26px #ffffff;
 }
 .auth-desc{
     margin-bottom: 5%;

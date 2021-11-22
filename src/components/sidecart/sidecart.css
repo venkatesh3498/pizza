@@ -10,12 +10,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 40px;
 }
 .empty-cart img{
     /* background-image: url('../../Assets/Hands\ -\ Shopping\ Cart\ Error.png'); */
     /* background-repeat: repeat; */
     /* margin-top: 40%; */
     width: 100%;
+    margin-bottom: 40px;
     
 
 }
@@ -23,6 +25,7 @@
     border: none;
     outline: none;
     background-color: inherit;
+    cursor: pointer;
 }
 .c-item-desc{
     display: flex;
@@ -41,6 +44,7 @@
     color: #ffffff;
     padding: 10px 30px;
     border-radius: 5px;
+    cursor: pointer;
 }
 .cart-foot{
     display: flex;

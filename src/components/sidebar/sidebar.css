@@ -1,7 +1,7 @@
 .sidebar{
     width: 14vw;
     height: 100vh;
-    padding: 7vh 1vh 7vh 1vh;
+    padding: 3vh 1vw 3vh 1vw;
     text-align: center;
 }
 .user-pic{
@@ -22,9 +22,10 @@
     width: 80%;
     margin: 15px;
     cursor: pointer;
+    align-items: center;
 }
 .nav-but p{
-    margin-left: 5%;
+    margin-left: 4%;
     padding: 10px;
     color: black;
 }
@@ -50,3 +51,7 @@
     background-color: #EC6083;
 }
 
+.author a{
+    cursor: pointer;
+    color: inherit;
+}

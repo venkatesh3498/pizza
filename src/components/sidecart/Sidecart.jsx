@@ -1,5 +1,5 @@
 import "./sidecart.css";
-import pic from "../../Assets/Hands - Shopping Cart Error.png";
+import pic from "../../Assets/undraw_empty_cart_co35.svg";
 import { useSelector,useDispatch } from 'react-redux';
 import { addToCart } from "../../actions/cartActions";
 

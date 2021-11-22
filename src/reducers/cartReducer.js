@@ -9,7 +9,7 @@ export default function cartReducers(
   switch (action.type) {
     case DELETE_FROM_CART:
       const filteredCart = state.cartItems.filter((item) => {
-        return item != action.payload;
+        return item !== action.payload;
       });
       return {
         ...state,

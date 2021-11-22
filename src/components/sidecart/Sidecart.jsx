@@ -5,7 +5,6 @@ import { addToCart } from "../../actions/cartActions";
 
 function Sidecart() {
   const cartItems = useSelector(state=>state.cartReducers.cartItems);
-  console.log(cartItems);
   const dispatch = useDispatch();
   let price = 0;
   

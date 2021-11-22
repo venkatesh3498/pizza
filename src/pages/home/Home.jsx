@@ -1,7 +1,7 @@
 import "../index.css";
 import "./home.css";
 import React, { useState,useEffect} from "react";
-import { useDispatch,useSelector,DefaultRootState } from 'react-redux'
+import { useDispatch,useSelector} from 'react-redux'
 import { Data } from "../../Data";
 import Capsule from "../../components/Capsules/Capsule";
 import Singleitem from "../../components/singleitem/Singleitem";
@@ -20,7 +20,7 @@ function Home() {
   const [active, setActive] = useState("All");
   const [filtername, setFilterName] = useState("All");
   
-  let filteredItems = items.filter((item) => {
+  let filteredItems = items && items.filter((item) => {
       if (filtername.toLowerCase() === "all") {
         return item;
       } else if (filtername.toLowerCase() === item.type.toLowerCase()) {
@@ -62,7 +62,7 @@ function Home() {
             {
               loading ? (filteredItems.length===0||error?<div className="diss">sorry we don't have any products <img src="https://img.icons8.com/ios/150/000000/disappointed--v2.png" /> </div>:""):(
                 
-                filteredItems.map((item) => {
+                filteredItems && filteredItems.map((item) => {
                   return <Singleitem item={item} />;
                 })
               )

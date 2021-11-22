@@ -21,7 +21,11 @@ export const userRegisterReducer=(state={},action)=>{
             return state;
     }
 };
-export const userLoginReducer=(state={},action)=>{
+export const userLoginReducer=(state={
+    currentUser:[],
+    success:false
+},action)=>{
+
 
     switch(action.type){
         case USER_LOGIN_REQUEST:
@@ -30,9 +34,11 @@ export const userLoginReducer=(state={},action)=>{
             };
         case 'USER_LOGIN_SUCCESS':
             return{
+
                 loading:false,
                 success:true,
                 currentUser:action.payload,
+                ...state
             };
         case 'USER_LOGIN_FAILED':
             return{
@@ -41,8 +47,7 @@ export const userLoginReducer=(state={},action)=>{
             };
         default:
             return {
-                state,
-                success:false
+                ...state
             };
     }
 }

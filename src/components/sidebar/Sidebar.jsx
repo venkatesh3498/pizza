@@ -2,23 +2,24 @@ import "./sidebar.css";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { logoutUser } from "./../../actions/userActions";
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 export const Sidebar = (props) => {
   let path = props.path;
   path = path.substring(1);
   const isAdmin=false;
   const dispatch = useDispatch();
   const [activ, setActiv] = useState(path || "Home");
-  const authStatus = localStorage.getItem("currentUser");
+  const authStatus = sessionStorage.getItem("currentUser");
+  const user = authStatus? JSON.parse(authStatus):"";
   return (
     <div className="sidebar">
       <div className="head">
         <img
-          src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60"
+          src={"https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60"}
           alt="user-img"
           className="user-pic"
         />
-        <h2>Name</h2>
+        <h2>{user.username}</h2>
       </div>
       <div className="listItmes">
         <Link to="/">

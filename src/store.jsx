@@ -3,16 +3,17 @@ import thunk from 'redux-thunk'
 
 import { getAllItemsReducers } from './reducers/dataReducer';
 import cartReducers from './reducers/cartReducer';
-import { userRegisterReducer } from './reducers/userReducer';
+import { userLoginReducer, userRegisterReducer } from './reducers/userReducer';
 
 const finalReducers = combineReducers({
     getAllItemsReducers : getAllItemsReducers,
     cartReducers:cartReducers,
-    userRegisterReducer:userRegisterReducer
+    userRegisterReducer:userRegisterReducer,
+    userLoginReducer:userLoginReducer
 });
 
 const cartItems = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : []
-const currentUser = localStorage.getItem('currentUser') ? JSON.parse(localStorage.getItem('currentUser')) : []
+const currentUser = sessionStorage.getItem('currentUser') ? JSON.parse(sessionStorage.getItem('currentUser')) : []
 const initialState = {
     cartReducers:{
         cartItems:cartItems

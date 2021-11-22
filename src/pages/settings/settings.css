@@ -11,7 +11,7 @@
     overflow:scroll;
 }
 .setting-home h3{
-    margin: 3%;
+    margin: 1%;
 }
 .setting-home::-webkit-scrollbar {
     background-color: inherit;

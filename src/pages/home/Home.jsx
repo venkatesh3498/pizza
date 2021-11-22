@@ -14,7 +14,7 @@ function Home() {
   const { items, loading, error } = itemsState;
   useEffect(() => {
     dispatch(getAllItems());
-  }, []);
+  },itemsState);
 
   const [active, setActive] = useState("All");
   const [filtername, setFilterName] = useState("All");
